@@ -1,4 +1,4 @@
-import Logo from '../../logo.svg';
+import Logo from '../../aviao.png';
 
 import style from "./style.css";
 import styled from "styled-components";
@@ -6,19 +6,18 @@ import React from "react";
 
 const Nav = styled.nav`
     width: 100%;
-    height: 68px;
-    background-color: #ccc;
+    height: 65px;
+    border-bottom: solid 0.75px #ff6600;
     margin: 0;
 
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 80px auto;
     align-items: center;
 `;
 
 const MenuList = styled.ul`
     display: flex;
-    width: 80%;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
 `;
 
@@ -28,8 +27,9 @@ const MenuItem = styled.li`
 
 const MenuLink = styled.a`
     text-decoration: none;
-    font-size: 22px;
-    color: #000;
+    font-size: 20px;
+    font-weight: 300;
+    color: #ff6600;
 
     &:hover{
         text-decoration: underline;
@@ -39,11 +39,12 @@ const MenuLink = styled.a`
 class NavBar extends React.Component{
     render(){
         return(
-
+            
             <Nav>
-                <MenuList>
 
-                    <img src={Logo} className="logo" alt="Logo Flightly"></img>
+                <img src={Logo} className="logo" alt="Logo Flightly"></img>
+
+                <MenuList>
 
                     <MenuItem>
                         <MenuLink href="/Cadastrar">Cadastrar</MenuLink>
@@ -57,9 +58,6 @@ class NavBar extends React.Component{
                         <MenuLink href="/Deletar">Deletar</MenuLink>
                     </MenuItem>
 
-                    <MenuItem>
-                        <MenuLink href="/Listar">Listar</MenuLink>
-                    </MenuItem>
                 </MenuList>
             </Nav>
     
