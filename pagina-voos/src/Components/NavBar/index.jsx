@@ -47,7 +47,7 @@ class NavBar extends React.Component{
                 <MenuList>
 
                     <MenuItem>
-                        <MenuLink href="/Cadastrar">Cadastrar</MenuLink>
+                        <MenuLink href="../../Paginas/Cadastro/index.js">Cadastrar</MenuLink>
                     </MenuItem>
 
                     <MenuItem>
@@ -55,7 +55,7 @@ class NavBar extends React.Component{
                     </MenuItem>
 
                     <MenuItem>
-                        <MenuLink href="/Deletar">Deletar</MenuLink>
+                        <MenuLink href="../../Paginas/Delete/index.js">Deletar</MenuLink>
                     </MenuItem>
 
                 </MenuList>
