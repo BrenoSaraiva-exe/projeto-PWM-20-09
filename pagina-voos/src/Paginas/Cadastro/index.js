@@ -9,22 +9,25 @@ const Input = styled.input`
   background: white;
   border: solid 0.5px;
   border-radius: 3px;
+  width: 80%;
 `;
 
 class Cadastrar extends React.Component{
     render(){
         return(
-            <>
+            <div className="body-cadastro">
                 <div className="container-cadastro">
+
+                <span className="title-cadastro">Cadastre o seu Voo</span>
                 
-                <span>Companhia Aérea</span>
+                <span className="etiqueta-input-cadastro">Companhia Aérea</span>
                 <Input defaultValue="Latam" type="text" />
 
-                <span>Companhia Aérea</span>
+                <span className="etiqueta-input-cadastro">Companhia Aérea</span>
                 <Input defaultValue="Latam" type="text" />
 
                 </div>
-            </>
+            </div>
         );
     }
 }
