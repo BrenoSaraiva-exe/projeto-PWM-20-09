@@ -5,7 +5,8 @@ import {MdDelete, MdEdit} from 'react-icons/md';
 import { useNavigate } from 'react-router';
 
 const Voo = ({valor, carregaVoos, isDelete, isEdit}) =>{
-
+    const navigate = useNavigate()
+    
         return (
             <div className="card">
                 <h3 className="titulo">{valor.companhia}</h3>
@@ -48,7 +49,8 @@ const Voo = ({valor, carregaVoos, isDelete, isEdit}) =>{
         }
 
         function atualizar(valor){
-            navigate('/Paginas/Atualizar/', {state: valor})
+            
+            navigate('/Paginas/Atualizar', {state: valor})
         }
             
 }

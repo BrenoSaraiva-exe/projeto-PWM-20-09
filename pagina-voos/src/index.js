@@ -16,7 +16,7 @@ root.render(
       <Routes>
         <Route path="/" element={<App/>}/>
         <Route path="Paginas/Cadastro" element={<Cadastro/>}/>
-        <Route path="Paginas/Atualizar/:id" element={<Atualizar/>}/>
+        <Route path="Paginas/Atualizar" element={<Atualizar/>}/>
         <Route path="Paginas/Deletar" element={<Deletar/>}/>
       </Routes>
     </BrowserRouter>

@@ -3,6 +3,7 @@ import NavBar from "../../Components/NavBar";
 import styled from "styled-components";
 import React from "react";
 import axios from "axios";
+import { useLocation } from 'react-router';
 
 const Input = styled.input`
   padding: 0.5em;
@@ -28,9 +29,13 @@ const Button = styled.button`
     margin-top: 30px;
 `;
 
-class Atualizar extends React.Component {
-    render() {
-        const { voo } = ;
+export default function Atualizar() {
+
+
+        const location = useLocation();
+        const { state } = location;
+        const voo = state;
+        console.log(voo)
         return (
             <>
 
@@ -43,46 +48,50 @@ class Atualizar extends React.Component {
                         <span className="title-atualizar">Atualize os Dados do Voo</span>
 
                         <span className="etiqueta-input-atualizar">Companhia Aérea</span>
-                        <Input defaultValue={voo.companhiaAerea} type="text" />
+                        <Input defaultValue={voo.companhia} type="text" id="companhiaAerea"/>
 
                         <span className="etiqueta-input-atualizar">Aeroporto Ida</span>
-                        <Input defaultValue={voo.aeroportoIda} type="text" />
+                        <Input defaultValue={voo.aeroportoIda} type="text" id="aeroportoIda"/>
 
                         <span className="etiqueta-input-atualizar">Aeroporto Volta</span>
-                        <Input defaultValue={voo.aeroportoVolta} type="text" />
+                        <Input defaultValue={voo.aeroportoVolta} type="text" id="aeroportoVolta"/>
 
                         <span className="etiqueta-input-atualizar">Data Ida</span>
-                        <Input defaultValue={voo.dataIda} type="date" />
+                        <Input defaultValue={voo.dataIda.split('T')[0]} type="date" id="dataIda"/>
 
                         <span className="etiqueta-input-atualizar">Data Volta</span>
-                        <Input defaultValue={voo.dataVolta} type="date" />
+                        <Input defaultValue={voo.dataVolta.split('T')[0]} type="date" id="dataVolta"/>
 
                         <span className="etiqueta-input-atualizar">Horário Ida</span>
-                        <Input defaultValue={voo.horaIda} type="text" />
+                        <Input value={voo.horaIda} type="text" id="horaIda"/>
 
                         <span className="etiqueta-input-atualizar">Horário Volta</span>
-                        <Input defaultValue={voo.horaVolta} type="text" />
+                        <Input value={voo.horaVolta} type="text" id="horaVolta"/>
+
+                        <input hidden value={voo._id} id="id"></input>
 
                         <Button type="button" onClick={atualizaVoo}>Atualizar Voo</Button>
                     </div>
                 </div>
             </>
         );
-    }
-}
+    
+
 
 function atualizaVoo() {
-    const companhiaAerea = document.getElementById('companhiaAerea').value;
+    const companhia = document.getElementById('companhiaAerea').value;
     const aeroportoIda = document.getElementById('aeroportoIda').value;
     const aeroportoVolta = document.getElementById('aeroportoVolta').value;
     const dataIda = document.getElementById('dataIda').value;
     const dataVolta = document.getElementById('dataVolta').value;
     const horaIda = document.getElementById('horaIda').value;
     const horaVolta = document.getElementById('horaVolta').value;
-    const voo = { companhiaAerea, aeroportoIda, aeroportoVolta, dataIda, dataVolta, horaIda, horaVolta };
+    const id = document.getElementById('id').value;
+    const voo = { id, companhia, aeroportoIda, aeroportoVolta, dataIda, dataVolta, horaIda, horaVolta };
 
     console.log(voo);
-    axios.put(`https://api-mpa-flightly-mn44.onrender.com/voo/${voo._id}`, voo);
+
+    axios.put(`https://api-mpa-flightly-mn44.onrender.com/voo/${voo.id}`, voo).then(alert('Voo alterado com sucesso')).catch((err)=>alert(err));
 }
 
-export default Atualizar;
+}

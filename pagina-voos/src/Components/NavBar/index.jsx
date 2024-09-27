@@ -52,10 +52,6 @@ class NavBar extends React.Component{
                     </MenuItem>
 
                     <MenuItem>
-                        <MenuLink href="../../Paginas/Atualizar">Atualizar</MenuLink>
-                    </MenuItem>
-
-                    <MenuItem>
                         <MenuLink href="../../Paginas/Deletar">Deletar</MenuLink>
                     </MenuItem>
 
