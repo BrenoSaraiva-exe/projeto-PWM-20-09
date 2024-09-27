@@ -12,6 +12,26 @@ code {
     monospace;
 }
 
-Nav{
+.titulo{
+  font-size: 1.5m;
+  font-weight: bold;
+  color: #000000;
+}
+
+.subtitulo{
+  font-size: 18pt;
+  font-weight: bold;
+  color: #000000;
+}
+
+.card{
   
+  display:inline-block;
+  width: 300px;
+  background-color: #fff;
+  border-color: darkorange;
+  border-radius: 40px;
+  padding: 16px;
+  margin: 3px;
+
 }

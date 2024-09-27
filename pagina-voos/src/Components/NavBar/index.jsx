@@ -1,6 +1,6 @@
 import Logo from '../../aviao.png';
 
-import style from "./style.css";
+import "./style.css";
 import styled from "styled-components";
 import React from "react";
 
@@ -41,27 +41,28 @@ class NavBar extends React.Component{
         return(
             
             <Nav>
-
+                <MenuLink href="/">
                 <img src={Logo} className="logo" alt="Logo Flightly"></img>
+                </MenuLink>
 
                 <MenuList>
 
                     <MenuItem>
-                        <MenuLink href="../../Paginas/Cadastro/index.js">Cadastrar</MenuLink>
+                        <MenuLink href="../../Paginas/Cadastro">Cadastrar</MenuLink>
                     </MenuItem>
 
                     <MenuItem>
-                        <MenuLink href="/Atualizar">Atualizar</MenuLink>
+                        <MenuLink href="../../Paginas/Atualizar">Atualizar</MenuLink>
                     </MenuItem>
 
                     <MenuItem>
-                        <MenuLink href="../../Paginas/Delete/index.js">Deletar</MenuLink>
+                        <MenuLink href="../../Paginas/Deletar">Deletar</MenuLink>
                     </MenuItem>
 
                 </MenuList>
             </Nav>
     
-        )
+        );
     }
 }
 
