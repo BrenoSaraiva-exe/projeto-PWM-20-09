@@ -21,10 +21,12 @@ export default function Delete() {
         
         return(
             <>
-                <NavBar/>
-                <ListaVoos isDelete={"true"}></ListaVoos>
-                <spam> Teste de Deletar</spam>
-            </>
+      <NavBar />
+      <div className='body-listagem'>
+        <h1>Listagem de Voos</h1>
+        <ListaVoos voos={voos} carregaVoos={carregaVoos} isDelete={false} />
+      </div>
+    </>
         );
 
 }
