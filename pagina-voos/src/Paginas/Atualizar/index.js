@@ -29,7 +29,8 @@ const Button = styled.button`
 `;
 
 class Atualizar extends React.Component {
-    render() {
+    render(props) {
+        const { voo } = props._id;
         return (
             <>
 
@@ -42,25 +43,25 @@ class Atualizar extends React.Component {
                         <span className="title-atualizar">Atualize os Dados do Voo</span>
 
                         <span className="etiqueta-input-atualizar">Companhia Aérea</span>
-                        <Input defaultValue="Latam" type="text" />
+                        <Input defaultValue={voo.companhiaAerea} type="text" />
 
                         <span className="etiqueta-input-atualizar">Aeroporto Ida</span>
-                        <Input defaultValue="Londres" type="text" />
+                        <Input defaultValue={voo.aeroportoIda} type="text" />
 
                         <span className="etiqueta-input-atualizar">Aeroporto Volta</span>
-                        <Input defaultValue="Guarulhos" type="text" />
+                        <Input defaultValue={voo.aeroportoVolta} type="text" />
 
                         <span className="etiqueta-input-atualizar">Data Ida</span>
-                        <Input defaultValue="26/09/2025" type="date" />
+                        <Input defaultValue={voo.dataIda} type="date" />
 
                         <span className="etiqueta-input-atualizar">Data Volta</span>
-                        <Input defaultValue="26/09/2025" type="date" />
+                        <Input defaultValue={voo.dataVolta} type="date" />
 
                         <span className="etiqueta-input-atualizar">Horário Ida</span>
-                        <Input defaultValue="08:00" type="text" />
+                        <Input defaultValue={voo.horaIda} type="text" />
 
                         <span className="etiqueta-input-atualizar">Horário Volta</span>
-                        <Input defaultValue="08:00" type="text" />
+                        <Input defaultValue={voo.horaVolta} type="text" />
 
                         <Button type="button" onClick={atualizaVoo}>Atualizar Voo</Button>
                     </div>
@@ -76,12 +77,12 @@ function atualizaVoo() {
     const aeroportoVolta = document.getElementById('aeroportoVolta').value;
     const dataIda = document.getElementById('dataIda').value;
     const dataVolta = document.getElementById('dataVolta').value;
-    const horarioIda = document.getElementById('horarioIda').value;
-    const horarioVolta = document.getElementById('horarioVolta').value;
-    const voo = { companhiaAerea, aeroportoIda, aeroportoVolta, dataIda, dataVolta, horarioIda, horarioVolta };
+    const horaIda = document.getElementById('horaIda').value;
+    const horaVolta = document.getElementById('horaVolta').value;
+    const voo = { companhiaAerea, aeroportoIda, aeroportoVolta, dataIda, dataVolta, horaIda, horaVolta };
 
     console.log(voo);
-    axios.put(`https://api-mpa-flightly-mn44.onrender.com/voo${voo.id}`, voo);
+    axios.put(`https://api-mpa-flightly-mn44.onrender.com/voo/${voo._id}`, voo);
 }
 
 export default Atualizar;

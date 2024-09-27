@@ -23,7 +23,7 @@ export default function Delete() {
             <>
       <NavBar />
       <div className='body-listagem'>
-        <h1>Listagem de Voos</h1>
+        <h1>Escolha o voo que deseja deletar</h1>
         <ListaVoos voos={voos} carregaVoos={carregaVoos} isDelete={false} />
       </div>
     </>
