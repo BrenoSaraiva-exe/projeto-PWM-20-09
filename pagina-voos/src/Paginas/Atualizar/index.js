@@ -29,8 +29,8 @@ const Button = styled.button`
 `;
 
 class Atualizar extends React.Component {
-    render(props) {
-        const { voo } = props._id;
+    render() {
+        const { voo } = ;
         return (
             <>
 

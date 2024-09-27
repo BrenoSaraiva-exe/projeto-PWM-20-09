@@ -2,7 +2,7 @@ import axios from 'axios';
 import './style.css';
 import '../../../index.js';
 import {MdDelete, MdEdit} from 'react-icons/md';
-import { useNavigation } from 'react-router';
+import { useNavigate } from 'react-router';
 
 const Voo = ({valor, carregaVoos, isDelete, isEdit}) =>{
 
@@ -36,7 +36,7 @@ const Voo = ({valor, carregaVoos, isDelete, isEdit}) =>{
                 </div>
                 <hr></hr>
                 <MdDelete className='icone' display={`${isDelete ? 'none' : 'block'}`} onClick={()=>remover(valor._id)}/>
-                <MdEdit className='icone' display={`${isDelete ? 'block' : 'none'}`} onClick={()=>atualizar(valor._id)}/>
+                <MdEdit className='icone' display={`${isDelete ? 'block' : 'none'}`} onClick={()=>atualizar(valor)}/>
             </div>
         );
 
@@ -47,10 +47,8 @@ const Voo = ({valor, carregaVoos, isDelete, isEdit}) =>{
             axios.delete(`${api}/${id}`).then(()=>carregaVoos());
         }
 
-        function atualizar(id){
-        return(
-            <Atualizar
-        )
+        function atualizar(valor){
+            navigate('/Paginas/Atualizar/', {state: valor})
         }
             
 }
