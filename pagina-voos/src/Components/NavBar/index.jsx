@@ -42,7 +42,7 @@ class NavBar extends React.Component{
         return(
             
             <Nav>
-                <MenuLink href="/">
+                <MenuLink to="/">
                 <img src={Logo} className="logo" alt="Logo Flightly"></img>
                 </MenuLink>
 
