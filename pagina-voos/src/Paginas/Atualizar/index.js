@@ -63,10 +63,10 @@ export default function Atualizar() {
                         <Input defaultValue={voo.dataVolta.split('T')[0]} type="date" id="dataVolta"/>
 
                         <span className="etiqueta-input-atualizar">Horário Ida</span>
-                        <Input value={voo.horaIda} type="text" id="horaIda"/>
+                        <Input defaultValue={voo.horaIda} type="text" id="horaIda"/>
 
                         <span className="etiqueta-input-atualizar">Horário Volta</span>
-                        <Input value={voo.horaVolta} type="text" id="horaVolta"/>
+                        <Input defaultValue={voo.horaVolta} type="text" id="horaVolta"/>
 
                         <input hidden value={voo._id} id="id"></input>
 
