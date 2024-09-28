@@ -3,6 +3,7 @@ import Logo from '../../aviao.png';
 import "./style.css";
 import styled from "styled-components";
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Nav = styled.nav`
     width: 100%;
@@ -25,7 +26,7 @@ const MenuItem = styled.li`
     list-style-type: none;
 `;
 
-const MenuLink = styled.a`
+const MenuLink = styled(Link)`
     text-decoration: none;
     font-size: 20px;
     font-weight: 300;
@@ -48,11 +49,11 @@ class NavBar extends React.Component{
                 <MenuList>
 
                     <MenuItem>
-                        <MenuLink href="../../Paginas/Cadastro">Cadastrar</MenuLink>
+                        <MenuLink to="/Paginas/Cadastro">Cadastrar</MenuLink>
                     </MenuItem>
 
                     <MenuItem>
-                        <MenuLink href="../../Paginas/Deletar">Deletar</MenuLink>
+                        <MenuLink to="/Paginas/Deletar">Deletar</MenuLink>
                     </MenuItem>
 
                 </MenuList>
